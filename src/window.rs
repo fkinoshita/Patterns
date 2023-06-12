@@ -127,7 +127,7 @@ mod imp {
 
             let mut captures = 0;
 
-            for (index, caps) in re.captures_iter(test_string.as_str()).enumerate() {
+            for (index, caps) in re.captures_iter(&test_string).enumerate() {
                 let m = caps.get(0).unwrap();
 
                 let mut start_iter = self.test_buffer.start_iter();
@@ -151,12 +151,12 @@ mod imp {
             }
 
             self.matches_label.set_label(
-                ngettext_f(
+                &ngettext_f(
                     "{matches} match",
                     "{matches} matches",
                     captures,
-                    &[("matches", format!("{}", captures).as_str())]
-                ).as_str()
+                    &[("matches", &format!("{}", captures))]
+                )
             );
 
         }

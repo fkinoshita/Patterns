@@ -4,7 +4,7 @@ use gtk::prelude::*;
 use gtk::subclass::prelude::*;
 use gtk::{gio, glib};
 
-use crate::config::{APP_ID, PKGDATADIR, VERSION, PROFILE};
+use crate::config::{APP_ID, PKGDATADIR, PROFILE, VERSION};
 use crate::window::Window;
 
 mod imp {
@@ -79,8 +79,7 @@ impl Application {
                 }
                 app.quit();
             })
-            .build()
-        ];
+            .build()];
 
         self.add_action_entries(actions);
     }

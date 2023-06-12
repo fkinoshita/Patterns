@@ -94,12 +94,7 @@ mod imp {
             let test_string = self.test_buffer.text(&self.test_buffer.start_iter(), &self.test_buffer.end_iter(), false);
 
             self.regex_placeholder.set_visible(regex_string.is_empty());
-
-            if test_string.len() < 1 {
-                self.test_placeholder.set_visible(true);
-            } else {
-                self.test_placeholder.set_visible(false);
-            }
+            self.test_placeholder.set_visible(test_string.is_empty());
 
             let mut regex_parts = regex_string.split("/");
             let regex = regex_parts.next().unwrap_or("");

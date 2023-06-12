@@ -100,19 +100,14 @@ mod imp {
             let regex = regex_parts.next().unwrap_or_default();
             let flags = regex_parts.next().unwrap_or_default();
 
-            let re: Regex = match RegexBuilder::new(regex)
+            let re: Regex = RegexBuilder::new(regex)
                     .multi_line(flags.contains('m'))
                     .case_insensitive(flags.contains('i'))
                     .ignore_whitespace(flags.contains('x'))
                     .dot_matches_new_line(flags.contains('s'))
                     .unicode(flags.contains('u'))
                     .swap_greed(flags.contains('U'))
-                    .build() {
-                Ok(r) => r,
-                Err(_) => {
-                    Regex::new(r"").unwrap()
-                },
-            };
+                    .build().unwrap_or(Regex::new(r"").unwrap());
 
             self.test_buffer.remove_all_tags(&self.test_buffer.start_iter(), &self.test_buffer.end_iter());
 

@@ -4,7 +4,7 @@ use gtk::prelude::*;
 use gtk::subclass::prelude::*;
 use gtk::{gio, glib};
 
-use crate::config::{APP_ID, PKGDATADIR, VERSION, PROFILE};
+use crate::config::{APP_ID, PKGDATADIR, PROFILE, VERSION};
 use crate::window::Window;
 
 mod imp {
@@ -33,7 +33,7 @@ mod imp {
             let window = if let Some(window) = application.active_window() {
                 window
             } else {
-                let window = Window::new(&*application);
+                let window = Window::new(&application);
                 window.upcast()
             };
 
@@ -79,8 +79,7 @@ impl Application {
                 }
                 app.quit();
             })
-            .build()
-        ];
+            .build()];
 
         self.add_action_entries(actions);
     }

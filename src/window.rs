@@ -132,13 +132,13 @@ mod imp {
                 let mut end_iter = self.test_buffer.start_iter();
                 end_iter.set_offset(m.end() as i32);
 
-                if index % 2 == 0 {
-                    self.test_buffer
-                        .apply_tag_by_name("marked_first", &start_iter, &end_iter);
+                let marker = if index % 2 == 0 {
+                    "marked_first"
                 } else {
-                    self.test_buffer
-                        .apply_tag_by_name("marked_second", &start_iter, &end_iter);
-                }
+                    "marked_second"
+                };
+                self.test_buffer
+                    .apply_tag_by_name(marker, &start_iter, &end_iter);
 
                 captures += 1;
             }

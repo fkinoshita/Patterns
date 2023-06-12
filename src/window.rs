@@ -97,8 +97,8 @@ mod imp {
             self.test_placeholder.set_visible(test_string.is_empty());
 
             let mut regex_parts = regex_string.split("/");
-            let regex = regex_parts.next().unwrap_or("");
-            let flags = regex_parts.next().unwrap_or("");
+            let regex = regex_parts.next().unwrap_or_default();
+            let flags = regex_parts.next().unwrap_or_default();
 
             let re: Regex = match RegexBuilder::new(regex)
                     .multi_line(flags.contains("m"))

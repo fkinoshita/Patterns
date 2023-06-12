@@ -1,0 +1,86 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the wildcard package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: wildcard\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-06-12 13:48+0200\n"
+"PO-Revision-Date: 2023-06-12 13:50+0200\n"
+"Last-Translator: FineFindus <jbenzler@gnome.org>\n"
+"Language-Team: \n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.3.1\n"
+
+#: data/io.github.fkinoshita.Wildcard.desktop.in.in:3
+#: data/io.github.fkinoshita.Wildcard.metainfo.xml.in.in:6 src/main.rs:38
+#: src/window.rs:264
+msgid "Wildcard"
+msgstr "Wildcard"
+
+#: data/io.github.fkinoshita.Wildcard.desktop.in.in:4
+#: data/io.github.fkinoshita.Wildcard.metainfo.xml.in.in:7 src/window.rs:266
+msgid "Test your regular expressions"
+msgstr "Teste deine regulären Ausdrücke"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/io.github.fkinoshita.Wildcard.desktop.in.in:12
+msgid "regex;regular;expressions;"
+msgstr "regex;regulär;ausdrücke;"
+
+#: data/io.github.fkinoshita.Wildcard.gschema.xml.in:7
+msgid "Window width"
+msgstr "Fensterbreite"
+
+#: data/io.github.fkinoshita.Wildcard.gschema.xml.in:12
+msgid "Window height"
+msgstr "Fensterhöhe"
+
+#: data/io.github.fkinoshita.Wildcard.gschema.xml.in:17
+msgid "Last regular expression insert"
+msgstr "Letzter eingefügter regulärer Ausdruck"
+
+#: data/io.github.fkinoshita.Wildcard.gschema.xml.in:22
+msgid "Last test insert"
+msgstr "Letzter eingefügter Test"
+
+#: data/io.github.fkinoshita.Wildcard.metainfo.xml.in.in:8
+msgid "Felipe Kinoshita"
+msgstr "Felipe Kinoshita"
+
+#: data/io.github.fkinoshita.Wildcard.metainfo.xml.in.in:13
+msgid ""
+"Wildcard gives you a nice and simple to use interface to test/practice "
+"regular expressions."
+msgstr ""
+"Wildcard bietet eine schöne und einfach zu bedienende Oberfläche zum Testen "
+"und Üben regulärer Ausdrücke."
+
+#: data/resources/ui/shortcuts.ui:11
+msgctxt "shortcut window"
+msgid "General"
+msgstr "Allgemien"
+
+#: data/resources/ui/shortcuts.ui:14
+msgctxt "shortcut window"
+msgid "Show Shortcuts"
+msgstr "Tastenkürzel Anzeigen"
+
+#: data/resources/ui/shortcuts.ui:20
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "Schließen"
+
+#: src/window.rs:147
+msgid "no matches"
+msgstr "Keine Treffer"
+
+#: src/window.rs:271
+msgid "translator-credits"
+msgstr "FineFindus <jbenzler@gnome.org>"
+

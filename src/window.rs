@@ -93,11 +93,7 @@ mod imp {
             let regex_string = self.regex_buffer.text(&self.regex_buffer.start_iter(), &self.regex_buffer.end_iter(), false);
             let test_string = self.test_buffer.text(&self.test_buffer.start_iter(), &self.test_buffer.end_iter(), false);
 
-            if regex_string.len() < 1 {
-                self.regex_placeholder.set_visible(true);
-            } else {
-                self.regex_placeholder.set_visible(false);
-            }
+            self.regex_placeholder.set_visible(regex_string.is_empty());
 
             if test_string.len() < 1 {
                 self.test_placeholder.set_visible(true);

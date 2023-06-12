@@ -90,9 +90,9 @@ impl Application {
     }
 
     pub fn run(&self) -> glib::ExitCode {
-        println!("Wildcard ({})", APP_ID);
-        println!("Version: {} ({})", VERSION, PROFILE);
-        println!("Datadir: {}", PKGDATADIR);
+        log::info!("Wildcard ({})", APP_ID);
+        log::info!("Version: {} ({})", VERSION, PROFILE);
+        log::info!("Datadir: {}", PKGDATADIR);
 
         ApplicationExtManual::run(self)
     }

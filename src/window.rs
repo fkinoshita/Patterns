@@ -130,10 +130,10 @@ mod imp {
             for (index, caps) in re.captures_iter(test_string.as_str()).enumerate() {
                 let m = caps.get(0).unwrap();
 
-                let mut start_iter = self.test_buffer.start_iter().clone();
+                let mut start_iter = self.test_buffer.start_iter();
                 start_iter.set_offset(m.start() as i32);
 
-                let mut end_iter = self.test_buffer.start_iter().clone();
+                let mut end_iter = self.test_buffer.start_iter();
                 end_iter.set_offset(m.end() as i32);
 
                 if index % 2 == 0 {

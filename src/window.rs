@@ -163,11 +163,11 @@ mod imp {
             let window = self.obj();
 
             if let Err(err) = window.save_regex_state() {
-                println!("Failed to save regex state, {}", &err);
+                log::error!("Failed to save regex state, {}", &err);
             }
 
             if let Err(err) = window.save_window_size() {
-                println!("Failed to save window state, {}", &err);
+                log::error!("Failed to save window state, {}", &err);
             }
 
             self.parent_close_request()

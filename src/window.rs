@@ -96,17 +96,17 @@ mod imp {
             self.regex_placeholder.set_visible(regex_string.is_empty());
             self.test_placeholder.set_visible(test_string.is_empty());
 
-            let mut regex_parts = regex_string.split("/");
+            let mut regex_parts = regex_string.split('/');
             let regex = regex_parts.next().unwrap_or_default();
             let flags = regex_parts.next().unwrap_or_default();
 
             let re: Regex = match RegexBuilder::new(regex)
-                    .multi_line(flags.contains("m"))
-                    .case_insensitive(flags.contains("i"))
-                    .ignore_whitespace(flags.contains("x"))
-                    .dot_matches_new_line(flags.contains("s"))
-                    .unicode(flags.contains("u"))
-                    .swap_greed(flags.contains("U"))
+                    .multi_line(flags.contains('m'))
+                    .case_insensitive(flags.contains('i'))
+                    .ignore_whitespace(flags.contains('x'))
+                    .dot_matches_new_line(flags.contains('s'))
+                    .unicode(flags.contains('u'))
+                    .swap_greed(flags.contains('U'))
                     .build() {
                 Ok(r) => r,
                 Err(_) => {
@@ -128,15 +128,15 @@ mod imp {
                 end_iter.set_offset(m.end() as i32);
 
                 if index % 2 == 0 {
-                    self.test_buffer.apply_tag_by_name(&format!("marked_first"), &start_iter, &end_iter);
+                    self.test_buffer.apply_tag_by_name("marked_first", &start_iter, &end_iter);
                 } else {
-                    self.test_buffer.apply_tag_by_name(&format!("marked_second"), &start_iter, &end_iter);
+                    self.test_buffer.apply_tag_by_name("marked_second", &start_iter, &end_iter);
                 }
 
                 captures += 1;
             }
 
-            if regex.len() < 1 || captures == 0 {
+            if regex.is_empty() || captures == 0 {
                 self.matches_label.set_label(&gettext("no matches"));
                 return;
             }

@@ -30,6 +30,9 @@ use self::application::Application;
 use self::config::{GETTEXT_PACKAGE, LOCALEDIR, RESOURCES_FILE};
 
 fn main() -> glib::ExitCode {
+    //init logger
+    pretty_env_logger::init();
+
     // Prepare i18n
     gettextrs::setlocale(LocaleCategory::LcAll, "");
     gettextrs::bindtextdomain(GETTEXT_PACKAGE, LOCALEDIR).expect("Unable to bind the text domain");

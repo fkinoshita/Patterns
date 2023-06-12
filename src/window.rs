@@ -271,6 +271,7 @@ impl Window {
             .translator_credits(gettext("translator-credits"))
             .developer_name("Felipe Kinoshita")
             .developers(vec!["Felipe Kinoshita <fkinoshita@gnome.org>"])
+            .artists(vec!["kramo https://kramo.hu"])
             .copyright("© 2023 Felipe Kinoshita.")
             .build();
 

@@ -137,9 +137,9 @@ mod imp {
                 end_iter.set_offset(m.end() as i32);
 
                 if index % 2 == 0 {
-                    self.test_buffer.apply_tag_by_name(format!("marked_first").as_str(), &start_iter, &end_iter);
+                    self.test_buffer.apply_tag_by_name(&format!("marked_first"), &start_iter, &end_iter);
                 } else {
-                    self.test_buffer.apply_tag_by_name(format!("marked_second").as_str(), &start_iter, &end_iter);
+                    self.test_buffer.apply_tag_by_name(&format!("marked_second"), &start_iter, &end_iter);
                 }
 
                 captures += 1;

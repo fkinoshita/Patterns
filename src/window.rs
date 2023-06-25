@@ -99,7 +99,7 @@ mod imp {
                 .unicode(self.settings.boolean("unicode-flag"))
                 .swap_greed(self.settings.boolean("greed-flag"))
                 .build()
-                .unwrap_or(Regex::new(r"").unwrap());
+                .unwrap_or_else(|_err| Regex::new(r"").unwrap());
 
             self.test_buffer
                 .remove_all_tags(&self.test_buffer.start_iter(), &self.test_buffer.end_iter());

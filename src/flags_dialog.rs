@@ -65,11 +65,8 @@ mod imp {
 
     impl ObjectImpl for FlagsDialog {
         fn signals() -> &'static [Signal] {
-            static SIGNALS: Lazy<Vec<Signal>> = Lazy::new(|| {
-                vec![
-                    Signal::builder("flags-changed").action().build(),
-                ]
-            });
+            static SIGNALS: Lazy<Vec<Signal>> =
+                Lazy::new(|| vec![Signal::builder("flags-changed").action().build()]);
             SIGNALS.as_ref()
         }
 
@@ -90,42 +87,60 @@ mod imp {
     impl FlagsDialog {
         #[template_callback]
         fn on_multiline_changed(&self) {
-            if let Err(err) = self.obj().set_flag_setting("multiline-flag", self.multiline_switch.is_active()) {
+            if let Err(err) = self
+                .obj()
+                .set_flag_setting("multiline-flag", self.multiline_switch.is_active())
+            {
                 log::error!("Failed to save multiline flag, {}", &err);
             }
         }
 
         #[template_callback]
         fn on_case_insensitive_changed(&self) {
-            if let Err(err) = self.obj().set_flag_setting("case-insensitive-flag", self.case_insensitive_switch.is_active()) {
+            if let Err(err) = self.obj().set_flag_setting(
+                "case-insensitive-flag",
+                self.case_insensitive_switch.is_active(),
+            ) {
                 log::error!("Failed to save case insensitive flag, {}", &err);
             }
         }
 
         #[template_callback]
         fn on_ignore_whitespace_changed(&self) {
-            if let Err(err) = self.obj().set_flag_setting("ignore-whitespace-flag", self.ignore_whitespace_switch.is_active()) {
+            if let Err(err) = self.obj().set_flag_setting(
+                "ignore-whitespace-flag",
+                self.ignore_whitespace_switch.is_active(),
+            ) {
                 log::error!("Failed to save ignore whitespace flag, {}", &err);
             }
         }
 
         #[template_callback]
         fn on_dot_matches_newline_changed(&self) {
-            if let Err(err) = self.obj().set_flag_setting("dot-matches-newline-flag", self.dot_matches_newline_switch.is_active()) {
+            if let Err(err) = self.obj().set_flag_setting(
+                "dot-matches-newline-flag",
+                self.dot_matches_newline_switch.is_active(),
+            ) {
                 log::error!("Failed to save dot matches newline flag, {}", &err);
             }
         }
 
         #[template_callback]
         fn on_unicode_changed(&self) {
-            if let Err(err) = self.obj().set_flag_setting("unicode-flag", self.unicode_switch.is_active()) {
+            if let Err(err) = self
+                .obj()
+                .set_flag_setting("unicode-flag", self.unicode_switch.is_active())
+            {
                 log::error!("Failed to save unicode flag, {}", &err);
             }
         }
 
         #[template_callback]
         fn on_greed_changed(&self) {
-            if let Err(err) = self.obj().set_flag_setting("greed-flag", self.greed_switch.is_active()) {
+            if let Err(err) = self
+                .obj()
+                .set_flag_setting("greed-flag", self.greed_switch.is_active())
+            {
                 log::error!("Failed to save greed flag, {}", &err);
             }
         }
@@ -142,6 +157,7 @@ glib::wrapper! {
 }
 
 impl FlagsDialog {
+    #[warn(clippy::new_without_default)]
     pub fn new() -> Self {
         glib::Object::builder().build()
     }
@@ -149,15 +165,25 @@ impl FlagsDialog {
     fn load_flags(&self) {
         let imp = self.imp();
 
-        imp.multiline_switch.set_active(imp.settings.boolean("multiline-flag"));
-        imp.case_insensitive_switch.set_active(imp.settings.boolean("case-insensitive-flag"));
-        imp.ignore_whitespace_switch.set_active(imp.settings.boolean("ignore-whitespace-flag"));
-        imp.dot_matches_newline_switch.set_active(imp.settings.boolean("dot-matches-newline-flag"));
-        imp.unicode_switch.set_active(imp.settings.boolean("unicode-flag"));
-        imp.greed_switch.set_active(imp.settings.boolean("greed-flag"));
+        imp.multiline_switch
+            .set_active(imp.settings.boolean("multiline-flag"));
+        imp.case_insensitive_switch
+            .set_active(imp.settings.boolean("case-insensitive-flag"));
+        imp.ignore_whitespace_switch
+            .set_active(imp.settings.boolean("ignore-whitespace-flag"));
+        imp.dot_matches_newline_switch
+            .set_active(imp.settings.boolean("dot-matches-newline-flag"));
+        imp.unicode_switch
+            .set_active(imp.settings.boolean("unicode-flag"));
+        imp.greed_switch
+            .set_active(imp.settings.boolean("greed-flag"));
     }
 
-    fn set_flag_setting(&self, setting_name: &str, setting_value: bool) -> Result<(), glib::BoolError> {
+    fn set_flag_setting(
+        &self,
+        setting_name: &str,
+        setting_value: bool,
+    ) -> Result<(), glib::BoolError> {
         let imp = self.imp();
 
         imp.settings.set_boolean(setting_name, setting_value)?;

@@ -253,11 +253,12 @@ impl Window {
             "flags-changed",
             false,
             glib::clone!(@strong self as this => move |_| {
-                this.imp().test_buffer.emit_by_name::<()>("changed", &[]);
+                    this.imp().test_buffer.emit_by_name::<()>("changed", &[]);
 
-                None
-            }
-        ));
+                    None
+                }
+            ),
+        );
 
         dialog.set_transient_for(Some(self));
         dialog.set_modal(true);
@@ -280,7 +281,7 @@ impl Window {
             .developers(vec!["Felipe Kinoshita <fkinoshita@gnome.org>"])
             .artists(vec!["kramo https://kramo.hu"])
             .copyright("© 2023 Felipe Kinoshita.")
-            .release_notes(&gettext("
+            .release_notes(gettext("
                 <p>This is minor release of Wildcard brings much needed fixes and improvements:</p>
                 <ul>
                   <li>Fixed scrolling issues on the text views</li>

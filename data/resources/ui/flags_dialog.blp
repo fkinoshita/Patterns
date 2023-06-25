@@ -51,8 +51,6 @@ template $FlagsDialog : Adw.Window {
               Gtk.Switch multiline_switch {
                 can-focus: false;
                 valign: center;
-
-                notify::state => $on_multiline_changed() swapped;
               }
             }
 
@@ -64,8 +62,6 @@ template $FlagsDialog : Adw.Window {
               Gtk.Switch case_insensitive_switch {
                 can-focus: false;
                 valign: center;
-
-                notify::state => $on_case_insensitive_changed() swapped;
               }
             }
 
@@ -77,8 +73,6 @@ template $FlagsDialog : Adw.Window {
               Gtk.Switch ignore_whitespace_switch {
                 can-focus: false;
                 valign: center;
-
-                notify::state => $on_ignore_whitespace_changed() swapped;
               }
             }
 
@@ -90,8 +84,6 @@ template $FlagsDialog : Adw.Window {
               Gtk.Switch dot_matches_newline_switch {
                 can-focus: false;
                 valign: center;
-
-                notify::state => $on_dot_matches_newline_changed() swapped;
               }
             }
 
@@ -103,8 +95,6 @@ template $FlagsDialog : Adw.Window {
               Gtk.Switch unicode_switch {
                 can-focus: false;
                 valign: center;
-
-                notify::state => $on_unicode_changed() swapped;
               }
             }
 
@@ -116,8 +106,6 @@ template $FlagsDialog : Adw.Window {
               Gtk.Switch greed_switch {
                 can-focus: false;
                 valign: center;
-
-                notify::state => $on_greed_changed() swapped;
               }
             }
           }

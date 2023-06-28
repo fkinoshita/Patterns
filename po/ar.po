@@ -1,0 +1,66 @@
+# Arabic translation for Wildcard.
+# This file is distributed under the same license as the Wildcard package.
+# zefr0x, 2023.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-05-03 02:21-0300\n"
+"PO-Revision-Date: 2023-06-29 00:08+0300\n"
+"Last-Translator: zefr0x\n"
+"Language-Team: Arabic\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : "
+"n%100>=11 && n%100<=99 ? 4 : 5);\n"
+"X-Generator: Poedit 3.3.1\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+#: data/com.felipekinoshita.Wildcard.desktop.in.in:3
+#: data/com.felipekinoshita.Wildcard.metainfo.xml.in.in:6 src/main.rs:41 src/window.rs:264
+msgid "Wildcard"
+msgstr "البَدَل"
+
+#: data/com.felipekinoshita.Wildcard.desktop.in.in:4
+#: data/com.felipekinoshita.Wildcard.metainfo.xml.in.in:7 src/window.rs:266
+msgid "Test your regular expressions"
+msgstr "اِختَبِر التَّعابِيرَ النَّمَطِيَّة"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/com.felipekinoshita.Wildcard.desktop.in.in:12
+msgid "regex;regular;expressions;"
+msgstr "تعبير;نمطي;"
+
+#: data/com.felipekinoshita.Wildcard.metainfo.xml.in.in:8
+msgid "Felipe Kinoshita"
+msgstr "فيليبي كينوشيتا"
+
+#: data/com.felipekinoshita.Wildcard.metainfo.xml.in.in:13
+msgid "Wildcard gives you a nice and simple to use interface to test/practice regular expressions."
+msgstr "البَدَلُ يُوفِّرُ وَاجِهَةً بَسِيطَةً وَجَذَّابَةً لِاختِبارِ التَّعابِيرِ النَّمَطِيَّةِ والتَّدرُّبُ عَليها."
+
+#: data/resources/ui/shortcuts.ui:11
+msgctxt "shortcut window"
+msgid "General"
+msgstr "عَامَّة"
+
+#: data/resources/ui/shortcuts.ui:14
+msgctxt "shortcut window"
+msgid "Show Shortcuts"
+msgstr "إظهَارُ الاِختِصارَات"
+
+#: data/resources/ui/shortcuts.ui:20
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "خُرُوج"
+
+#: src/window.rs:147
+msgid "no matches"
+msgstr "لَا يُوجَدُ تَطَابُق"
+
+#: src/window.rs:271
+msgid "translator-credits"
+msgstr "zefr0x"
